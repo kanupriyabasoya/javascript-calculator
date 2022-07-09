@@ -1,26 +1,21 @@
-const display = document.querySelector('.display');
-const button =Array.from( document.querySelectorAll('.button'));
-button.forEach(val=>{
-    val.addEventListener('click',((e)=>{
-        switch(e.target.innerText){
-            case 'c':
-                display.innerText = '';
-                break;
+const display= document.querySelector('.display');
+const button = Array.from(document.querySelectorAll('.button'));
 
-                case '→':
-                display.innerText = display.innerText.slice(0,-1);
-                break; 
-            case '=':
-                try{
-                display.innerText = eval(display.innerText);}
-                catch{
-                        display.innerText="error";
-                }
-                break;
-            default:
-                display.innerText += e.target.innerText;
-        }
-      
-    }))
+button.map((value)=>{
+    value.addEventListener('click',eventfunc)
 });
 
+function eventfunc(e){
+ switch(e.target.innerText){
+    case 'ac':
+        display.innerText = '';
+        break;
+    case 'c':
+        display.innerText = display.innerText.slice(0,-1);
+    case '=':
+        display.innerText = eval(display.innerText);
+        break;
+    default:
+        display.innerText += e.target.innerText;
+ }
+}
