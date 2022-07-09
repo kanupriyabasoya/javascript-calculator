@@ -56,3 +56,6 @@ body{
   grid-column:span 4;
   background: rgb(215, 46, 46);
 }
+.all-clear{
+  background: rgb(17, 137, 202);
+}
