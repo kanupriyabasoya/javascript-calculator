@@ -11,9 +11,18 @@ function eventfunc(e){
         display.innerText = '';
         break;
     case 'c':
-        display.innerText = display.innerText.slice(0,-1);
+        if(display.innerText != "error"){
+        display.innerText = display.innerText.slice(0,-1);}
+        else{
+            display.innerText = '';
+        }
+        break;
     case '=':
-        display.innerText = eval(display.innerText);
+        try{
+        display.innerText = eval(display.innerText);}
+        catch{
+            display.innerText = "error";
+        }
         break;
     default:
         display.innerText += e.target.innerText;
