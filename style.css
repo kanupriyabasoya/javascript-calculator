@@ -29,6 +29,9 @@ body{
   font-size:30px;
   color:#000;
   text-align:right;
+  overflow-y: hidden;
+  overflow-x:scroll;
+  
 }
 .calculator-inside{
   width:100%;
